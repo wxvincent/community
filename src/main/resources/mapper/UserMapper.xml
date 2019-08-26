@@ -30,6 +30,7 @@
         where email = #{email}
     </select>
 
+    <!--keyProperty的作用是数据库生成id后，mybatis自动去取id，然后放到对象中去-->
     <insert id="insertUser" parameterType="User" keyProperty="id">
         insert into user (<include refid="insertFields"></include>)
         values(#{username}, #{password}, #{salt}, #{email}, #{type}, #{status}, #{activationCode}, #{headerUrl}, #{createTime})
