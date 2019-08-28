@@ -47,4 +47,8 @@ public class MessageService {
     public int readMessage(List<Integer> ids) {
         return messageMapper.updateStatus(ids, 1);
     }
+
+    public int removeMessage(int id) {
+        return messageMapper.deleteMessage(id);
+    }
 }

@@ -10,10 +10,7 @@ import com.nowcoder.community.util.HostHolder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.*;
 
@@ -141,6 +138,13 @@ public class MessageController {
         message.setCreateTime(new Date());
         messageService.addMessage(message);
 
+        return CommunityUtil.getJSONString(0);
+    }
+
+    @RequestMapping(path = "/letter/remove", method = RequestMethod.POST)
+    @ResponseBody
+    public String removeLetter(int id) {
+        messageService.removeMessage(id);
         return CommunityUtil.getJSONString(0);
     }
 }

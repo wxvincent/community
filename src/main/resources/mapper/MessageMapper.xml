@@ -76,4 +76,9 @@
             #{id}
         </foreach>
     </update>
+
+    <update id="deleteMessage" parameterType="int">
+        update message set status = 2
+        where id = #{id}
+    </update>
 </mapper>

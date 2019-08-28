@@ -29,4 +29,7 @@ public interface MessageMapper {
 
     //修改消息的状态
     int updateStatus(@Param("ids") List<Integer> ids, @Param("status") int status);
+
+    //删除消息
+    int deleteMessage(int id);
 }

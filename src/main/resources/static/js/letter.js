@@ -1,6 +1,5 @@
 $(function(){
 	$("#sendBtn").click(send_letter);
-	$(".close").click(delete_msg);
 });
 
 function send_letter() {
@@ -28,7 +27,16 @@ function send_letter() {
 	);
 }
 
-function delete_msg() {
-	// TODO 删除数据
-	$(this).parents(".media").remove();
+function delete_msg(id) {
+    // TODO 删除数据
+    $(this).parents(".media").remove();
+
+    $.post(
+        CONTEXT_PATH + "/letter/remove",
+        {"id":id},
+        function (data) {
+            location.reload();
+        }
+    );
 }
+
