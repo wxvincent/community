@@ -28,6 +28,7 @@ public class ServiceLogAspect {
     @Before("pointcut()")
     public void before(JoinPoint joinPoint) {
         ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
+        if (attributes == null) return;//消费者调用controller可能会出现空指针
         HttpServletRequest request = attributes.getRequest();
         //用户的ip
         String ip = request.getRemoteHost();
