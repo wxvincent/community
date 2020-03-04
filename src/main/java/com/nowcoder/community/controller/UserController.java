@@ -145,7 +145,7 @@ public class UserController implements CommunityConstant {
         //响应图片
         response.setContentType("image/" + suffix);
         //在try的括号中的对象会自动创建finally语句进行close
-        try (FileInputStream fis = new FileInputStream(filename);) {
+        try (FileInputStream fis = new FileInputStream(filename)) {
             OutputStream os = response.getOutputStream();
 
             byte[] buffer = new byte[1024];

@@ -39,4 +39,5 @@ public class CaffeineTests {
         System.out.println(discussPostService.findDiscussPosts(0, 0, 10, 1));
         System.out.println(discussPostService.findDiscussPosts(0, 0, 10, 0));
     }
+
 }

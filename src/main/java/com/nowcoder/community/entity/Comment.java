@@ -8,7 +8,7 @@ public class Comment {
     private int userId;
     private int entityType;
     private int entityId;
-    private int targetId;
+    private int targetId;//这个是为了表示回复评论时对着某个人回复才用的
     private String content;
     private int status;
     private Date createTime;
